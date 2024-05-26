@@ -192,3 +192,151 @@
 // const deleteMessagIndex = findIndexById(allMessages, 5);
 // allMessages.splice(deleteMessagIndex, 1);
 // console.table(allMessages);
+
+// function functionWithCallback(cb, value) {
+//   cb(value);
+// }
+
+// functionWithCallback(alert, "Hello");
+// functionWithCallback(console.log, "Hello console");
+
+// const arr = [1, 2, 3, 4, 8, 5, 6, 9];
+
+// function printElement(currentValue, index, array) {
+//   console.log("currentValue:>>", currentValue);
+//   console.log("index:>>", index);
+//   console.log("array:>>", array);
+// }
+
+// arr.forEach(printElement);
+// const printElement = (currentValue) =>
+//   console.log("currentValue:>>", currentValue);
+
+// const months = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "September",
+//   "October",
+//   "November",
+//   "December",
+// ];
+
+// function addHtml(month) {
+//   document.write(`<li>${months}</li>`);
+// }
+
+// document.write(`<ul>`);
+// months.forEach(addHtml);
+// document.write(`</ul>`);
+
+// const arr = [1, -2, 3, 4];
+
+// function toSqr(currentValue, index, array) {
+//   return currentValue ** 2;
+// }
+
+// const arr2 = arr.map(toSqr);
+// console.log(arr2);
+
+// const arr2 = arr.map((a) => a ** 2);
+
+// function changeSign(currentValue, index, array) {
+//   return currentValue * -1;
+// }
+// const arr3 = arr.map(changeSign);
+// console.log(arr3);
+// const arr3 = arr.map((a) => a * -1);
+// console.log(arr3);
+
+// const months = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "September",
+//   "October",
+//   "November",
+//   "December",
+// ];
+
+// function generateList(month) {
+//   return `<li>${month}</li>`;
+// }
+
+// const months1 = months.map(generateList);
+// [
+//   `<li> "January"</li>`,
+//   `<li> "January"</li>`,
+//   `<li> "January"</li>`,
+// ];
+
+// document.write(`
+// <ol>
+// ${months.map(generateList).join("")}
+// </ol>
+//  `);
+// const users = [
+//   { id: 1, name: "Test", age: 15 },
+//   { id: 2, name: "Ivo", age: 30 },
+// ]; // ['Test', 'Ivo']
+
+// function getName(el) {
+//   return el.name;
+// }
+
+// const users1 = users.map(getName);
+// const users1 = users.map((users) => users.name);
+// console.log("users1", users1);
+
+// const numbers = [8, -8, 6, -10, 5, 11];
+
+// function isOdd(number) {
+//   return number % 2 === 1;
+// }
+
+// const oddNumbers = numbers.filter(isOdd);
+// console.log(oddNumbers);
+
+// const ages = [19, 15, 25, 64];
+// function isAdult(age) {
+//   return age >= 18;
+// }
+
+// const checkAge = ages.filter(isAdult);
+// console.log("checkAge", checkAge);
+
+// const numbers = [8, -8, 6, -10, 5, 11];
+
+// function isSix(number) {
+//   return number === 100;
+// }
+
+// const foundIndex = numbers.findIndex(isSix);
+// console.log(foundIndex);
+
+// const users = [
+//   { id: 1, name: "Test", age: 15 },
+//   { id: 2, name: "Ivo", age: 30 },
+// ];
+
+// function findUserById(users) {
+//   return users.id === 1;
+// }
+
+// const foundUserIndex = users.findIndex(findUserById);
+// console.log(foundUserIndex);
+// users[foundUserIndex].age = 16;
+
+// const updateData = { age: 16 };
+// users[foundUserIndex] = { ...users[foundUserIndex], ...updateData };
+// console.log(foundUserIndex);
