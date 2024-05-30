@@ -145,19 +145,23 @@
 //   this.age = userAge;
 //   this.email = userEmail;
 //   this.isMale = isMale;
-//   //   this.changeEmail = function (newEmail) {
-//   //     this.email = newEmail;
-//   //   };
-//   // return this;
-// }
+  //   this.changeEmail = function (newEmail) {
+  //     this.email = newEmail;
+  //   };
+  // return this;
+}
+// User.prototype.getFullName = function () {
+//   return `${this.firstName} ${this.lastName} `;
+// };
 // User.prototype.changeEmail = function (newEmail) {
 //   this.email = newEmail;
 // };
 
 // const user1 = new User("Test", "Testov", 25, "mail@gmail.com", true);
-// const user2 = new User("Test1", "Testov1", 30, "mail123@gmail.com", true);
+// // const user2 = new User("Test1", "Testov1", 30, "mail123@gmail.com", true);
 
-// // console.log("user2:>>", user2);
+// console.log("user1:>>", user1);
+// console.log(user1.getFullName());
 
 // user1.changeEmail("newemail@gmail.com");
 // console.log("user1:>>", user1);
