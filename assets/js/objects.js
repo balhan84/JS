@@ -145,11 +145,11 @@
 //   this.age = userAge;
 //   this.email = userEmail;
 //   this.isMale = isMale;
-  //   this.changeEmail = function (newEmail) {
-  //     this.email = newEmail;
-  //   };
-  // return this;
-}
+//   this.changeEmail = function (newEmail) {
+//     this.email = newEmail;
+//   };
+// return this;
+// }
 // User.prototype.getFullName = function () {
 //   return `${this.firstName} ${this.lastName} `;
 // };
