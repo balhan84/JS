@@ -67,12 +67,12 @@
 // const phoneBookCopy1 = new Map([...phoneBook.entries()]);
 
 // Example: перекладач. Словник міститься в мапі
-const vocabulary = new Map();
-vocabulary.set("dog", "собака");
-vocabulary.set("cat", "кіт");
-vocabulary.set("run", "бігти");
+// const vocabulary = new Map();
+// vocabulary.set("dog", "собака");
+// vocabulary.set("cat", "кіт");
+// vocabulary.set("run", "бігти");
 
-const engPhrase = "dog run white cat";
+// const engPhrase = "dog run white cat";
 
 // function translatePhrase(engPhrase) {
 //   //get array words
@@ -111,31 +111,31 @@ const engPhrase = "dog run white cat";
 // const ukrPhrase = translatePhrase(engPhrase);
 // console.log(ukrPhrase);
 
-const user = { firstName: "Test", lastName: "Testov" };
+// const user = { firstName: "Test", lastName: "Testov" };
 
-const usersMessages = new Map();
-usersMessages.set(user, [
-  { id: 1, body: "example1" },
-  { id: 2, body: "example2" },
-]);
-// console.log(usersMessages.get(user));
-//practice
-const usersWithMessages2 = [
-  { id: 1, name: "Test1", message: "hello", date: new Date() },
-  { id: 1, name: "Test1", message: "how are you", date: new Date() },
-  { id: 2, name: "Test2", message: "hi)", date: new Date() },
-  { id: 2, name: "Test2", message: "fine)", date: new Date() },
-];
+// const usersMessages = new Map();
+// usersMessages.set(user, [
+//   { id: 1, body: "example1" },
+//   { id: 2, body: "example2" },
+// ]);
+// // console.log(usersMessages.get(user));
+// //practice
+// const usersWithMessages2 = [
+//   { id: 1, name: "Test1", message: "hello", date: new Date() },
+//   { id: 1, name: "Test1", message: "how are you", date: new Date() },
+//   { id: 2, name: "Test2", message: "hi)", date: new Date() },
+//   { id: 2, name: "Test2", message: "fine)", date: new Date() },
+// ];
 
 //get array of original users
 
-const users = [];
-usersWithMessages2.forEach((um) => {
-  if (!users.find((user) => user.id === um.id)) {
-    users.push({ id: um.id, name: um.name });
-  }
-});
-console.log("users:>>", users);
+// const users = [];
+// usersWithMessages2.forEach((um) => {
+//   if (!users.find((user) => user.id === um.id)) {
+//     users.push({ id: um.id, name: um.name });
+//   }
+// });
+// console.log("users:>>", users);
 //
 
 // const onlyMessage = usersWithMessages2.map((um) => ({
@@ -144,17 +144,17 @@ console.log("users:>>", users);
 // }));
 // console.log(onlyMessage);
 
-const userToMessage = new Map();
+// const userToMessage = new Map();
 
-users.forEach((user) => {
-  userToMessage.set(
-    user,
-    usersWithMessages2
-      .filter((userWithMessages) => userWithMessages.id === user.id)
-      .map((userWithMessages) => ({
-        message: userWithMessages.message,
-        date: userWithMessages.date,
-      }))
-  );
-});
-console.log(userToMessage);
+// users.forEach((user) => {
+//   userToMessage.set(
+//     user,
+//     usersWithMessages2
+//       .filter((userWithMessages) => userWithMessages.id === user.id)
+//       .map((userWithMessages) => ({
+//         message: userWithMessages.message,
+//         date: userWithMessages.date,
+//       }))
+//   );
+// });
+// console.log(userToMessage);

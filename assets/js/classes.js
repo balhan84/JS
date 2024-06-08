@@ -85,55 +85,132 @@
 // *прописати сеттер для кольору. колір може бути один зі списку
 // ['white', 'red', 'black', 'yellow', 'green', 'blue', 'grey']
 
-class Phone {
-  constructor(brand, model, color, price, year) {
-    this._brand = brand;
-    this._model = model;
-    this.color = color;
-    this._price = price;
-    this._year = year;
-  }
-  getPhoneAge() {
-    return new Date().getFullYear() - this._year;
-  }
-  render() {
-    document.write(`
-<article>
-<h3>${this._brand}</h3>
-<p>${this._model} ${this.color} ${this._price} ${this._year}</p>
-</article>
-    `);
-  }
+// class Phone {
+//   constructor(brand, model, color, price, year) {
+//     this._brand = brand;
+//     this._model = model;
+//     this.color = color;
+//     this._price = price;
+//     this._year = year;
+//   }
+//   getPhoneAge() {
+//     return new Date().getFullYear() - this._year;
+//   }
+//   render() {
+//     document.write(`
+// <article>
+// <h3>${this._brand}</h3>
+// <p>${this._model} ${this.color} ${this._price} ${this._year}</p>
+// </article>
+//     `);
+//   }
 
-  set color(value) {
-    const useColor = [
-      "white",
-      "red",
-      "black",
-      "yellow",
-      "green",
-      "blue",
-      "grey",
-    ];
-    if (!useColor.includes(value)) {
-      throw new RangeError(`Color is not accept`);
-    }
-    this._color = value;
-  }
+//   set color(value) {
+//     const useColor = [
+//       "white",
+//       "red",
+//       "black",
+//       "yellow",
+//       "green",
+//       "blue",
+//       "grey",
+//     ];
+//     if (!useColor.includes(value)) {
+//       throw new RangeError(`Color is not accept`);
+//     }
+//     this._color = value;
+//   }
 
-  get color() {
-    return this._color;
-  }
-}
+//   get color() {
+//     return this._color;
+//   }
+// }
 
 // const phone1 = new Phone("Samsung", "A52", "white", 15000, 2021);
 
-try {
-  const phone1 = new Phone("Samsung", "A52", "white", 15000, 2021);
-  console.log(phone1);
-  console.log(phone1.getPhoneAge());
-  console.log((phone1.color = "blue"));
-  phone1.render();
-} catch (error) {
-  console.error(error);
+// try {
+//   const phone1 = new Phone("Samsung", "A52", "white", 15000, 2021);
+//   console.log(phone1);
+//   console.log(phone1.getPhoneAge());
+//   console.log((phone1.color = "blue"));
+//   phone1.render();
+// } catch (error) {
+//   console.error(error);
+// }
+
+// Об'єктно-орієнтоване програмування ------------------------------------------
+
+// Принципи ООП:
+// інкапсуляція - приховання логіки (особливостей реалізації)
+// спадкування  - перевикористання структури та логіки (альт. назва - спеціалізація, is a)
+// поліморфізм  - можливість через однаковий інтерфейс працювати з різними типами (в js поліморфізм підтипів)
+//базовий -батьківський
+class User {
+  constructor(name, surname, age, isMale, email) {
+    this.firstName = name;
+    this.lastName = surname;
+    this.age = age;
+    this.isMale = isMale;
+    this.email = email;
+    this.isBanned = false;
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }
+
+const user1 = new User("Test", "Testovych", 25, false, "test@test.com");
+
+//дочірній - спадкоємець
+class Moderator extends User {
+  constructor(name, surname, age, isMale, email, permission) {
+    super(name, surname, age, isMale, email);
+    this.permission = permission;
+  }
+  sendMessage(user, message) {
+    return `Moderator ${this.getFullName()} send message "${message}" to user ${user.getFullName()}`;
+  }
+}
+
+const moderator1 = new Moderator("Mod", "Modev", 25, false, "test@test.com", {
+  canRead: true,
+  canWrite: true,
+});
+console.log(moderator1.getFullName());
+document.write(moderator1.sendMessage(user1, "your message is great"));
+
+class Admin extends Moderator {
+  constructor(name, surname, age, isMale, email, permission, category) {
+    super(name, surname, age, isMale, email, permission);
+    this.category = category;
+  }
+  ban(user) {
+    user.isBanned = true;
+  }
+  unban(user) {
+    user.isBanned = false;
+  }
+  sendMessage(user, message) {
+    return `Administrator ${this.getFullName()} send message "${message}" to user ${user.getFullName()}`;
+  }
+}
+
+const admin1 = new Admin(
+  "Nod",
+  "Nodev",
+  27,
+  false,
+  "test@test.com",
+  {
+    canRead: true,
+    canWrite: true,
+  },
+  1
+);
+admin1.ban(user1);
+console.log(user1.isBanned);
+admin1.unban(user1);
+console.log(user1.isBanned);
+
+console.log(admin1.getFullName());
+document.write(`<p>${admin1.sendMessage(user1, "balabla")}</p>`);
